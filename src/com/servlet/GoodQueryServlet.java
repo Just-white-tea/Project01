@@ -20,6 +20,10 @@ public class GoodQueryServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
+        // 1、设置编码（请求和响应）
+        req.setCharacterEncoding("utf-8");
+        resp.setCharacterEncoding("utf-8");
+        resp.setContentType("text/html;charset=utf-8");
         GoodsDao goodsDao=new GoodsDao();
         List<Goods> list=goodsDao.findByGoods(null);
 

@@ -33,7 +33,7 @@ public class LoginServlet extends HttpServlet {
 
         if (password.equals(user1.getPassword())){
             //将用户对象存入
-            session.setAttribute("username",username);
+            session.setAttribute("user",user1);
             out.println("<script type='text/javascript'>alert('登录成功');location.href='goodQueryServlet';</script>");
         }else {
             out.println("<script type='text/javascript'>alert('登录失败');history.back();</script>");

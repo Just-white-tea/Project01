@@ -34,13 +34,13 @@ public class GoodsServlet extends HttpServlet {
                     // 判断控件对象是普通表单控件还是上传表单控件
                     if (fileItem.isFormField()){
                         if ("goodName".equals(fileItem.getFieldName())){
-                            goods.setGoodName(fileItem.getString());
+                            goods.setGoodName(fileItem.getString("utf-8"));
                         }else if ("goodPrice".equals(fileItem.getFieldName())){
                             goods.setGoodPrice(Integer.parseInt(fileItem.getString()));
                         }else if ("goodStock".equals(fileItem.getFieldName())){
                             goods.setGoodStock(Integer.parseInt(fileItem.getString()));
                         }else if ("goodDescription".equals(fileItem.getFieldName())){
-                            goods.setGoodDescription(fileItem.getString());
+                            goods.setGoodDescription(fileItem.getString("utf-8"));
                         }else if ("goodPic".equals(fileItem.getFieldName())){
                             goods.setGoodPic(fileItem.getString("utf-8"));
                         }else if ("goodId".equals(fileItem.getFieldName())){
